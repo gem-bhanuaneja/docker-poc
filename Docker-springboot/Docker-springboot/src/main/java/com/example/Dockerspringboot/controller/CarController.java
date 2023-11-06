@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/mobile")
+@RequestMapping("/car")
 public class CarController {
 
     @Autowired
@@ -33,10 +33,10 @@ public class CarController {
     }
 
 
-    @Operation(summary = "fetch mobile by mobile-id", description = "Api to fetch mobile details by mobile-id")
+    @Operation(summary = "fetch car by car-id", description = "Api to fetch car details by car-id")
     @GetMapping("/get-by-id")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Fetched mobile details successfully",
+            @ApiResponse(responseCode = "200", description = "Fetched car details successfully",
                     content = {@Content(schema = @Schema(implementation = ResponseEntity.class))}),
             @ApiResponse(responseCode = "5XX", description = "Internal Error")})
     public ResponseEntity<Car> findById(final Integer carId) {
