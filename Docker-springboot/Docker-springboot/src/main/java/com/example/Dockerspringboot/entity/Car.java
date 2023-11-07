@@ -25,7 +25,7 @@ public class Car {
     private Integer year;
 
     @Column(name = "car_color")
-    private Integer color;
+    private String color;
 
     @Column(name = "price")
     private Integer price;
