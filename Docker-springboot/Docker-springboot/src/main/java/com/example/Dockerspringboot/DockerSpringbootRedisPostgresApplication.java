@@ -6,7 +6,7 @@ import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.servers.Server;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-@OpenAPIDefinition(info = @Info(title = "Mobile service Application"), servers = {@Server(url = "/", description = "Default Server URL")})
+@OpenAPIDefinition(info = @Info(title = "Car service Application"), servers = {@Server(url = "/", description = "Default Server URL")})
 @SpringBootApplication
 public class DockerSpringbootRedisPostgresApplication {
 
