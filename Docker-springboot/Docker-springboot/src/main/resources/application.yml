@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/car
-    username: postgres
-    password: root
+    url: jdbc:postgresql://postgresContainer:5432/dockerDB
+    username: car
+    password: 1234
   jpa:
     hibernate:
       ddl-auto: update
@@ -12,6 +12,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         default_schema: public
     show-sql: true
-
+    redis.:
+      host: redisContainer
+      port: 6379
 server:
   port: 9090

@@ -5,6 +5,7 @@ import com.example.Dockerspringboot.repository.CarRepository;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.cache.annotation.Cacheable;
 
 import java.util.List;
 
@@ -19,8 +20,9 @@ public class CarService {
         return carRepository.findAll();
     }
 
-    public Car getCarById(final Integer mobileId) {
-        Car car = carRepository.findById(mobileId)
+    @Cacheable(value = "carCache", key = "#carId")
+    public Car getCarById(final Integer carId) {
+        Car car = carRepository.findById(carId)
                 .orElseThrow(() -> new IllegalArgumentException("No car found for given id"));
         return car;
     }
