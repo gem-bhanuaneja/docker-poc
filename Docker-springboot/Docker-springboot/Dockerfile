@@ -3,7 +3,7 @@ WORKDIR /app
 # Copy code
 COPY . .
 # Build
-RUN mvn clean install -e
+mvn clean install -DskipTests
 # final directory
 RUN mkdir -p /finaljar
 # Copy built jar
